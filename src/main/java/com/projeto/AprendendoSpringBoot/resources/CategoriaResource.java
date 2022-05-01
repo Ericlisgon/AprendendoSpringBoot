@@ -16,11 +16,11 @@ import com.projeto.AprendendoSpringBoot.service.CategoriaService;
 public class CategoriaResource {
 	
 	@Autowired
-	private CategoriaService service;
+	private CategoriaService repo;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET) // Escolhendo o método que vai ser usado busca(GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Categoria obj = service.buscar(id);
+		Categoria obj = repo.buscar(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
